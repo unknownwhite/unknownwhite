@@ -1,0 +1,86 @@
+* {
+    box-sizing: border-box;
+    margin: 10px;
+    padding: auto;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(transparent, #30ff00);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(transparent, #eb0404);
+}
+
+body {
+    display: grid;
+    place-items: center;
+    height: 200vh;
+    background: #000000;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: auto;
+    padding: 1em;
+    text-align: center;
+    background: #4f6d7a;
+    border-radius: .1em;
+    color: #ffffff;
+    cursor: pointer;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.card:hover {
+    color: rgb(0, 0, 0)
+}
+
+.container {
+    display: grid;
+    place-items: center;
+    position: relative;
+    width: auto;
+    height: auto;
+    border-radius: 1em;
+    background: linear-gradient(50deg, #00ff59, #02b3ff);
+    overflow: hidden;
+}
+
+.container::before {
+    content: "";
+    position: absolute;
+    width: 990px;
+    height: 50px;
+    top: 0;
+    right: 55px;
+    transition: 1.0s;
+    background: linear-gradient(50deg, #ff0303, #c40505);
+    transform: rotate(-45deg) translate(0, -100px);
+}
+
+.container:hover::before {
+    animation: cardEffect 3.0s;
+}
+
+@keyframes cardEffect {
+    500% {
+        transform: rotate(-45deg) translate(0, 600px);
+    }
+}
+
+@keyframes cardEffect {
+    40% {
+        transform: rotate(-45deg) translate(0, 1100px);
+    }
+}
